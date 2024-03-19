@@ -14,17 +14,33 @@ class Game {
         let frameIndex = 0;
         for (let frame = 0; frame < 10; frame++) {
             if (this._rolls[frameIndex] === 10) {
-                score += 10 + this._rolls[frameIndex + 1] + this._rolls[frameIndex + 2];
+                score += 10 + this.strkeBonus(frameIndex);
                 frameIndex++;
-            }else if(this._rolls[frameIndex] + this._rolls[frameIndex + 1] === 10){
-                score += 10 + this._rolls[frameIndex + 2];
+            }else if(this.isSpare(frameIndex)){
+                score += 10 + this.spareBonus(frameIndex);
                 frameIndex += 2;
             } else {
-                score += this._rolls[frameIndex] + this._rolls[frameIndex + 1];
+                score += this.sunOfBallsInFrame(frameIndex);
                 frameIndex += 2;
             }
         }
         return score;
+    }
+
+    isSpare(frameIndex) {
+        return (this.sunOfBallsInFrame(frameIndex) === 10);
+    }
+
+    sunOfBallsInFrame(frameIndex) {
+        return this._rolls[frameIndex] + this._rolls[frameIndex + 1];
+    }
+
+    spareBonus(frameIndex) {
+        return this._rolls[frameIndex + 2];
+    }
+
+    strkeBonus(frameIndex) {
+        return this._rolls[frameIndex + 1] + this._rolls[frameIndex + 2];
     }
 }
 
