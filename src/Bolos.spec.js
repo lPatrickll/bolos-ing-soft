@@ -12,6 +12,11 @@ function rollMany(n, pins) {
   }
 }
 
+function rollSpare() {
+  g.roll(5);
+  g.roll(5);
+}
+
 
 describe("Bolos", () => {
   it("deberia mostrar 0", () => {
@@ -25,8 +30,7 @@ describe("Bolos", () => {
   });
 
   it("deberia mostrar el score 16", () => {
-    g.roll(5);
-    g.roll(5); // spare
+    rollSpare();
     g.roll(3);
     rollMany(17, 0);
     expect(g.score()).toEqual(16);
