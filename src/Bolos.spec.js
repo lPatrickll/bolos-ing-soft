@@ -44,7 +44,7 @@ describe("Bolos", () => {
     expect(g.score()).toEqual(24);
   });
 
-  it("deberia mostrar 0", () => {
+  it("deberia mostrar 300 cuando hacemos 10 strikes seguidos", () => {
     rollMany(12, 10);
     expect(g.score()).toEqual(300);
   });
