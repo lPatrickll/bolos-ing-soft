@@ -1,3 +1,5 @@
+import Game from "./claseGame";
+
 describe("Bolos", () => {
   it("deberia mostrar 0", () => {
     const g = new Game();
@@ -7,10 +9,3 @@ describe("Bolos", () => {
     expect(g.score()).toEqual(0);
   });
 });
-
-class Game{
-    roll(){}
-    score(){
-        return 0;
-    }
-}
