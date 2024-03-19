@@ -24,11 +24,11 @@ describe("Bolos", () => {
     expect(g.score()).toEqual(20);
   });
 
-  /*it("deberia mostrar el score 16", () => {
+  it("deberia mostrar el score 16", () => {
     g.roll(5);
     g.roll(5); // spare
     g.roll(3);
     rollMany(17, 0);
     expect(g.score()).toEqual(16);
-  });*/
+  });
 });
