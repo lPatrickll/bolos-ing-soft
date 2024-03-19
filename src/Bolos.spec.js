@@ -35,4 +35,12 @@ describe("Bolos", () => {
     rollMany(17, 0);
     expect(g.score()).toEqual(16);
   });
+
+  it("deberia mostrar el score 24 CON UN STRIKE", () => {
+    g.roll(10);
+    g.roll(3);
+    g.roll(4);
+    rollMany(16, 0);
+    expect(g.score()).toEqual(24);
+  });
 });
