@@ -43,4 +43,9 @@ describe("Bolos", () => {
     rollMany(16, 0);
     expect(g.score()).toEqual(24);
   });
+
+  it("deberia mostrar 0", () => {
+    rollMany(12, 10);
+    expect(g.score()).toEqual(300);
+  });
 });
