@@ -1,7 +1,14 @@
-class Game{
-    roll(){}
-    score(){
-        return 0;
+class Game {
+    constructor() {
+        this.totalScore = 0;
+    }
+
+    roll(pins) {
+        this.totalScore += pins;
+    }
+
+    score() {
+        return this.totalScore;
     }
 }
 
